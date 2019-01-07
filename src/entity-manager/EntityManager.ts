@@ -375,6 +375,7 @@ export class EntityManager {
             .insert()
             .into(target)
             .values(entity)
+            .updateEntity((options && options.reload !== undefined) ? options.reload : true)
             .execute();
     }
 
